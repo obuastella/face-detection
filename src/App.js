@@ -1,3 +1,15 @@
+// Instal dependecies - done
+// Import dependecies - done
+// Setup webcam and canvas - done
+// Define references to those - done
+// Load face mesh -done
+// Detect function
+// Drawing utilities
+// Load triangulation
+// Setup triangle path
+// Setup point drawing
+// Add drawMesh to detect function
+
 import "./App.css";
 import { useRef } from "react";
 import * as tf from "@tensorflow/tfjs";
@@ -9,7 +21,11 @@ function App() {
   const canvasRef = useRef(null);
 
   // Load Facemesh
-  const runFaceMesh = async () => {};
+  const runFaceMesh = async () => {
+    const net = facemesh.load({
+      inputResolution: { width: 640, height: 480, scale: 0.8 },
+    });
+  };
   return (
     <div className="App">
       <header className="App-header">
