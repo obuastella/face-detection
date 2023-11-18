@@ -13,19 +13,15 @@
 import "./App.css";
 import { useRef } from "react";
 import * as tf from "@tensorflow/tfjs";
-import * as facemesh from "@tensorflow-models/facemesh";
+import * as facemesh from "@tensorflow-models/face-landmarks-detection";
 import Webcam from "react-webcam";
+// import { drawMesh } from "./utilities";
 function App() {
   // set up references
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
 
-  // Load Facemesh
-  const runFaceMesh = async () => {
-    const net = facemesh.load({
-      inputResolution: { width: 640, height: 480, scale: 0.8 },
-    });
-  };
+  // Load Face mesh
   return (
     <div className="App">
       <header className="App-header">
@@ -61,5 +57,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
